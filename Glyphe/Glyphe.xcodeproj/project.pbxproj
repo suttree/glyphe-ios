@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE366E1D2B0CBB1E009D1EFB /* GlypheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE366E1C2B0CBB1E009D1EFB /* GlypheApp.swift */; };
+		AE366E1F2B0CBB1E009D1EFB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE366E1E2B0CBB1E009D1EFB /* ContentView.swift */; };
+		AE366E212B0CBB21009D1EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE366E202B0CBB21009D1EFB /* Assets.xcassets */; };
+		AE366E242B0CBB21009D1EFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE366E232B0CBB21009D1EFB /* Preview Assets.xcassets */; };
+		AE366E312B0CBB3C009D1EFB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE366E302B0CBB3C009D1EFB /* WidgetKit.framework */; };
+		AE366E332B0CBB3C009D1EFB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE366E322B0CBB3C009D1EFB /* SwiftUI.framework */; };
+		AE366E362B0CBB3C009D1EFB /* GlypheWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE366E352B0CBB3C009D1EFB /* GlypheWidgetBundle.swift */; };
+		AE366E382B0CBB3C009D1EFB /* GlypheWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE366E372B0CBB3C009D1EFB /* GlypheWidgetLiveActivity.swift */; };
+		AE366E3A2B0CBB3C009D1EFB /* GlypheWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE366E392B0CBB3C009D1EFB /* GlypheWidget.swift */; };
+		AE366E3C2B0CBB3C009D1EFB /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE366E3B2B0CBB3C009D1EFB /* AppIntent.swift */; };
+		AE366E3E2B0CBB3E009D1EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE366E3D2B0CBB3E009D1EFB /* Assets.xcassets */; };
+		AE366E422B0CBB3E009D1EFB /* GlypheWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AE366E2E2B0CBB3C009D1EFB /* GlypheWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AE366E482B0CBDE8009D1EFB /* IconWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE366E472B0CBDE7009D1EFB /* IconWidgetProvider.swift */; };
+		AE366E492B0CBDE8009D1EFB /* IconWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE366E472B0CBDE7009D1EFB /* IconWidgetProvider.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE366E402B0CBB3E009D1EFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE366E112B0CBB1E009D1EFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE366E2D2B0CBB3C009D1EFB;
+			remoteInfo = GlypheWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AE366E462B0CBB3F009D1EFB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AE366E422B0CBB3E009D1EFB /* GlypheWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AE366E192B0CBB1E009D1EFB /* Glyphe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glyphe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE366E1C2B0CBB1E009D1EFB /* GlypheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlypheApp.swift; sourceTree = "<group>"; };
+		AE366E1E2B0CBB1E009D1EFB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AE366E202B0CBB21009D1EFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE366E232B0CBB21009D1EFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AE366E2E2B0CBB3C009D1EFB /* GlypheWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GlypheWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE366E302B0CBB3C009D1EFB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		AE366E322B0CBB3C009D1EFB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AE366E352B0CBB3C009D1EFB /* GlypheWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlypheWidgetBundle.swift; sourceTree = "<group>"; };
+		AE366E372B0CBB3C009D1EFB /* GlypheWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlypheWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		AE366E392B0CBB3C009D1EFB /* GlypheWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlypheWidget.swift; sourceTree = "<group>"; };
+		AE366E3B2B0CBB3C009D1EFB /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		AE366E3D2B0CBB3E009D1EFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE366E3F2B0CBB3E009D1EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE366E472B0CBDE7009D1EFB /* IconWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconWidgetProvider.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE366E162B0CBB1E009D1EFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE366E2B2B0CBB3C009D1EFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE366E332B0CBB3C009D1EFB /* SwiftUI.framework in Frameworks */,
+				AE366E312B0CBB3C009D1EFB /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE366E102B0CBB1E009D1EFB = {
+			isa = PBXGroup;
+			children = (
+				AE366E1B2B0CBB1E009D1EFB /* Glyphe */,
+				AE366E342B0CBB3C009D1EFB /* GlypheWidget */,
+				AE366E2F2B0CBB3C009D1EFB /* Frameworks */,
+				AE366E1A2B0CBB1E009D1EFB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE366E1A2B0CBB1E009D1EFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE366E192B0CBB1E009D1EFB /* Glyphe.app */,
+				AE366E2E2B0CBB3C009D1EFB /* GlypheWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE366E1B2B0CBB1E009D1EFB /* Glyphe */ = {
+			isa = PBXGroup;
+			children = (
+				AE366E1C2B0CBB1E009D1EFB /* GlypheApp.swift */,
+				AE366E1E2B0CBB1E009D1EFB /* ContentView.swift */,
+				AE366E202B0CBB21009D1EFB /* Assets.xcassets */,
+				AE366E222B0CBB21009D1EFB /* Preview Content */,
+			);
+			path = Glyphe;
+			sourceTree = "<group>";
+		};
+		AE366E222B0CBB21009D1EFB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AE366E232B0CBB21009D1EFB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AE366E2F2B0CBB3C009D1EFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE366E302B0CBB3C009D1EFB /* WidgetKit.framework */,
+				AE366E322B0CBB3C009D1EFB /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE366E342B0CBB3C009D1EFB /* GlypheWidget */ = {
+			isa = PBXGroup;
+			children = (
+				AE366E352B0CBB3C009D1EFB /* GlypheWidgetBundle.swift */,
+				AE366E372B0CBB3C009D1EFB /* GlypheWidgetLiveActivity.swift */,
+				AE366E392B0CBB3C009D1EFB /* GlypheWidget.swift */,
+				AE366E3B2B0CBB3C009D1EFB /* AppIntent.swift */,
+				AE366E3D2B0CBB3E009D1EFB /* Assets.xcassets */,
+				AE366E3F2B0CBB3E009D1EFB /* Info.plist */,
+				AE366E472B0CBDE7009D1EFB /* IconWidgetProvider.swift */,
+			);
+			path = GlypheWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE366E182B0CBB1E009D1EFB /* Glyphe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE366E272B0CBB21009D1EFB /* Build configuration list for PBXNativeTarget "Glyphe" */;
+			buildPhases = (
+				AE366E152B0CBB1E009D1EFB /* Sources */,
+				AE366E162B0CBB1E009D1EFB /* Frameworks */,
+				AE366E172B0CBB1E009D1EFB /* Resources */,
+				AE366E462B0CBB3F009D1EFB /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE366E412B0CBB3E009D1EFB /* PBXTargetDependency */,
+			);
+			name = Glyphe;
+			productName = Glyphe;
+			productReference = AE366E192B0CBB1E009D1EFB /* Glyphe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE366E2D2B0CBB3C009D1EFB /* GlypheWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE366E432B0CBB3F009D1EFB /* Build configuration list for PBXNativeTarget "GlypheWidgetExtension" */;
+			buildPhases = (
+				AE366E2A2B0CBB3C009D1EFB /* Sources */,
+				AE366E2B2B0CBB3C009D1EFB /* Frameworks */,
+				AE366E2C2B0CBB3C009D1EFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GlypheWidgetExtension;
+			productName = GlypheWidgetExtension;
+			productReference = AE366E2E2B0CBB3C009D1EFB /* GlypheWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE366E112B0CBB1E009D1EFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AE366E182B0CBB1E009D1EFB = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					AE366E2D2B0CBB3C009D1EFB = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = AE366E142B0CBB1E009D1EFB /* Build configuration list for PBXProject "Glyphe" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE366E102B0CBB1E009D1EFB;
+			productRefGroup = AE366E1A2B0CBB1E009D1EFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE366E182B0CBB1E009D1EFB /* Glyphe */,
+				AE366E2D2B0CBB3C009D1EFB /* GlypheWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE366E172B0CBB1E009D1EFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE366E242B0CBB21009D1EFB /* Preview Assets.xcassets in Resources */,
+				AE366E212B0CBB21009D1EFB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE366E2C2B0CBB3C009D1EFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE366E3E2B0CBB3E009D1EFB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE366E152B0CBB1E009D1EFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE366E1F2B0CBB1E009D1EFB /* ContentView.swift in Sources */,
+				AE366E1D2B0CBB1E009D1EFB /* GlypheApp.swift in Sources */,
+				AE366E482B0CBDE8009D1EFB /* IconWidgetProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE366E2A2B0CBB3C009D1EFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE366E3A2B0CBB3C009D1EFB /* GlypheWidget.swift in Sources */,
+				AE366E3C2B0CBB3C009D1EFB /* AppIntent.swift in Sources */,
+				AE366E362B0CBB3C009D1EFB /* GlypheWidgetBundle.swift in Sources */,
+				AE366E382B0CBB3C009D1EFB /* GlypheWidgetLiveActivity.swift in Sources */,
+				AE366E492B0CBDE8009D1EFB /* IconWidgetProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE366E412B0CBB3E009D1EFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE366E2D2B0CBB3C009D1EFB /* GlypheWidgetExtension */;
+			targetProxy = AE366E402B0CBB3E009D1EFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AE366E252B0CBB21009D1EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE366E262B0CBB21009D1EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE366E282B0CBB21009D1EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Glyphe/Preview Content\"";
+				DEVELOPMENT_TEAM = 54PHU582RT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE366E292B0CBB21009D1EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Glyphe/Preview Content\"";
+				DEVELOPMENT_TEAM = 54PHU582RT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AE366E442B0CBB3F009D1EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 54PHU582RT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GlypheWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GlypheWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe.GlypheWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE366E452B0CBB3F009D1EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 54PHU582RT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GlypheWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GlypheWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe.GlypheWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE366E142B0CBB1E009D1EFB /* Build configuration list for PBXProject "Glyphe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE366E252B0CBB21009D1EFB /* Debug */,
+				AE366E262B0CBB21009D1EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE366E272B0CBB21009D1EFB /* Build configuration list for PBXNativeTarget "Glyphe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE366E282B0CBB21009D1EFB /* Debug */,
+				AE366E292B0CBB21009D1EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE366E432B0CBB3F009D1EFB /* Build configuration list for PBXNativeTarget "GlypheWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE366E442B0CBB3F009D1EFB /* Debug */,
+				AE366E452B0CBB3F009D1EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE366E112B0CBB1E009D1EFB /* Project object */;
+}

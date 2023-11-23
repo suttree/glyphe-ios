@@ -25,7 +25,7 @@ struct GlypheWidget: Widget {
             RandomIconsWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Glyphe")
-        .description("Thoughtful provocations")
+        .description("A thoughtful horoscope of interpretable hieroglyphes")
     }
 }
 

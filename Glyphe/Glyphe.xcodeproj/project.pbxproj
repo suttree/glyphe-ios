@@ -667,6 +667,8 @@
 		AEB3BE3F2B110DB30053776F /* 147.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB82B110DAF0053776F /* 147.png */; };
 		AEB3BE402B110DB30053776F /* 153.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB92B110DAF0053776F /* 153.png */; };
 		AEB3BE412B110DB30053776F /* 153.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB92B110DAF0053776F /* 153.png */; };
+		AEB3BE462B1117910053776F /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BE452B1117910053776F /* bg.png */; };
+		AEB3BE472B1117920053776F /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BE452B1117910053776F /* bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1032,6 +1034,7 @@
 		AEB3BBB72B110DAF0053776F /* 91.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 91.png; sourceTree = "<group>"; };
 		AEB3BBB82B110DAF0053776F /* 147.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 147.png; sourceTree = "<group>"; };
 		AEB3BBB92B110DAF0053776F /* 153.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 153.png; sourceTree = "<group>"; };
+		AEB3BE452B1117910053776F /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1057,6 +1060,7 @@
 		AEB3B4792B0F99B10053776F = {
 			isa = PBXGroup;
 			children = (
+				AEB3BE452B1117910053776F /* bg.png */,
 				AEB3BA752B110DAE0053776F /* Icons */,
 				AEB3B4842B0F99B10053776F /* Glyphe */,
 				AEB3B49D2B0F99E50053776F /* GlypheWidget */,
@@ -1751,6 +1755,7 @@
 				AEB3BE402B110DB30053776F /* 153.png in Resources */,
 				AEB3BBC62B110DAF0053776F /* 228.png in Resources */,
 				AEB3BC1A2B110DB00053776F /* 171.png in Resources */,
+				AEB3BE462B1117910053776F /* bg.png in Resources */,
 				AEB3BBCC2B110DAF0053776F /* 215.png in Resources */,
 				AEB3BCDE2B110DB10053776F /* 35.png in Resources */,
 				AEB3BDB02B110DB20053776F /* 168.png in Resources */,
@@ -1984,6 +1989,7 @@
 				AEB3BC872B110DB10053776F /* 117.png in Resources */,
 				AEB3BD2B2B110DB10053776F /* 324.png in Resources */,
 				AEB3BC792B110DB10053776F /* 248.png in Resources */,
+				AEB3BE472B1117920053776F /* bg.png in Resources */,
 				AEB3BDC72B110DB20053776F /* 223.png in Resources */,
 				AEB3BC512B110DB00053776F /* 14.png in Resources */,
 				AEB3BDAD2B110DB20053776F /* 82.png in Resources */,

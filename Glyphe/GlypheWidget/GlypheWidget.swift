@@ -12,20 +12,17 @@ struct RandomIconsWidgetEntryView: View {
     var entry: RandomIconsEntry
 
     var body: some View {
-        // Use a GeometryReader to fill the entire widget space
-        GeometryReader { geometry in
-            VStack {
-                Image(uiImage: entry.icon1)
-                    .resizable()
-                    .scaledToFit()
-                Image(uiImage: entry.icon2)
-                    .resizable()
-                    .scaledToFit()
-            }
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            .background(Color(white: 0.95)) // Set light grey background
+        VStack {
+            Image(uiImage: entry.icon1)
+                .resizable()
+                .scaledToFit()
+            Image(uiImage: entry.icon2)
+                .resizable()
+                .scaledToFit()
         }
-        .edgesIgnoringSafeArea(.all) // Extend background to the edges of the widget
+        .containerBackground(for: .widget) {
+            Color(white: 0.95)
+        } // Using containerBackground for iOS 16 and later
     }
 }
 

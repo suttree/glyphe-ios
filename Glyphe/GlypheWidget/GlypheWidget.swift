@@ -111,12 +111,18 @@ struct RandomIconsProvider: TimelineProvider {
         let currentDate = Date()
         let calendar = Calendar.current
 
-        var icons = fetchRandomIconsIfNeeded(currentDate: currentDate)
-
+        // Loop for every 6 hours in the next 24 hours
         for hourOffset in stride(from: 0, to: 24, by: 6) {
-            guard let entryDate = calendar.date(byAdding: .hour, value: hourOffset, to: currentDate),
-                  icons.count >= 4 else { continue }
+            guard let entryDate = calendar.date(byAdding: .hour, value: hourOffset, to: currentDate) else { continue }
 
+            // Check if it's midnight to reset the cache key
+            if calendar.isDate(entryDate, equalTo: currentDate, toGranularity: .day) && calendar.component(.hour, from: entryDate) == 0 {
+                // Reset the last update date at midnight
+                defaults.set(Date.distantPast, forKey: lastUpdateKey)
+            }
+
+            // Fetch icons (this will fetch new ones if the date was reset)
+            var icons = fetchRandomIconsIfNeeded(currentDate: entryDate)
             icons.rotate()
 
             let entry = RandomIconsEntry(date: entryDate, icon1: icons[0], icon2: icons[1], icon3: icons[2], icon4: icons[3])

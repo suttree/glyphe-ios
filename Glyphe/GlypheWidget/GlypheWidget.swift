@@ -16,6 +16,8 @@ struct RandomIconsWidgetEntryView: View {
     // This environment variable tells us what size the widget is
     @Environment(\.widgetFamily) var widgetFamily
 
+    let dayString = Calendar.current.weekdaySymbols[Calendar.current.component(.weekday, from: Date()) - 1]
+    
     var body: some View {
         Group {
             switch widgetFamily {
@@ -24,7 +26,7 @@ struct RandomIconsWidgetEntryView: View {
                 Image(uiImage: entry.icon1)
                     .resizable()
                     .scaledToFit()
-                Text("hieroglyphe")
+                Text(dayString)
                     .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                     .foregroundColor(Color(white: 0.2)) // Off-black color
                     .multilineTextAlignment(.center) // Center align text
@@ -46,7 +48,7 @@ struct RandomIconsWidgetEntryView: View {
                         .resizable()
                         .scaledToFit()
                 }
-                Text("hieroglyphe")
+                Text(dayString)
                     .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                     .foregroundColor(Color(white: 0.2)) // Off-black color
                     .multilineTextAlignment(.center) // Center align text
@@ -72,7 +74,7 @@ struct RandomIconsWidgetEntryView: View {
                             .scaledToFit()
                     }
                 }
-                Text("hieroglyphe")
+                Text(dayString)
                     .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                     .foregroundColor(Color(white: 0.2)) // Off-black color
                     .multilineTextAlignment(.center) // Center align text

@@ -694,7 +694,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AEB3B4822B0F99B10053776F /* Glyphe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glyphe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB3B4822B0F99B10053776F /* hieroglyphe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hieroglyphe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB3B4852B0F99B10053776F /* GlypheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlypheApp.swift; sourceTree = "<group>"; };
 		AEB3B4872B0F99B10053776F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AEB3B4892B0F99B30053776F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1068,7 +1068,7 @@
 		AEB3B4832B0F99B10053776F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEB3B4822B0F99B10053776F /* Glyphe.app */,
+				AEB3B4822B0F99B10053776F /* hieroglyphe.app */,
 				AEB3B4972B0F99E40053776F /* GlypheWidgetExtension.appex */,
 			);
 			name = Products;
@@ -1465,7 +1465,7 @@
 			);
 			name = Glyphe;
 			productName = Glyphe;
-			productReference = AEB3B4822B0F99B10053776F /* Glyphe.app */;
+			productReference = AEB3B4822B0F99B10053776F /* hieroglyphe.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AEB3B4962B0F99E40053776F /* GlypheWidgetExtension */ = {
@@ -2364,7 +2364,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = hieroglyphe;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2394,7 +2394,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = hieroglyphe;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

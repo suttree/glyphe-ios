@@ -24,6 +24,11 @@ struct RandomIconsWidgetEntryView: View {
                 Image(uiImage: entry.icon1)
                     .resizable()
                     .scaledToFit()
+                Text("hieroglyphe")
+                    .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
+                    .foregroundColor(Color(white: 0.2)) // Off-black color
+                    .multilineTextAlignment(.center) // Center align text
+                    .padding(.top, 5) // Optional padding from the image to the text
 
             case .systemMedium:
                 // Medium Widget - Show 4 icons in a line
@@ -41,6 +46,11 @@ struct RandomIconsWidgetEntryView: View {
                         .resizable()
                         .scaledToFit()
                 }
+                Text("hieroglyphe")
+                    .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
+                    .foregroundColor(Color(white: 0.2)) // Off-black color
+                    .multilineTextAlignment(.center) // Center align text
+                    .padding(.top, 5) // Optional padding from the image to the text
 
             case .systemLarge:
                 // Large Widget - Show 4 icons in a 2x2 grid
@@ -62,6 +72,11 @@ struct RandomIconsWidgetEntryView: View {
                             .scaledToFit()
                     }
                 }
+                Text("hieroglyphe")
+                    .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
+                    .foregroundColor(Color(white: 0.2)) // Off-black color
+                    .multilineTextAlignment(.center) // Center align text
+                    .padding(.top, 5) // Optional padding from the image to the text
 
             default:
                 Image(uiImage: entry.icon1)

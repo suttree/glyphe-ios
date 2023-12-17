@@ -111,6 +111,8 @@ struct RandomIconsProvider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         print("getTimeline called")
         var entries: [RandomIconsEntry] = []
+        
+        /*
         let currentDate = Date()
         let calendar = Calendar.current
 
@@ -120,18 +122,72 @@ struct RandomIconsProvider: TimelineProvider {
         print("---0")
         print(calendar.date(byAdding: .hour, value: hourOffset, to: currentDate))
         print("---1")
+         
+         guard let entryDate = calendar.date(byAdding: .hour, value: hourOffset, to: currentDate) else {
+             print("Error: Failed to calculate the entry date")
+             // Handle the error, e.g., by logging or using a fallback date
+             // Return from the function if there's no meaningful way to proceed
+             return
+         }
 
-        guard let entryDate = calendar.date(byAdding: .hour, value: hourOffset, to: currentDate) else {
-            print("Error: Failed to calculate the entry date")
-            // Handle the error, e.g., by logging or using a fallback date
-            // Return from the function if there's no meaningful way to proceed
-            return
+         print(entryDate)
+         print(currentDate)
+         print("---2")
+         if calendar.isDate(entryDate, equalTo: currentDate, toGranularity: .day) && calendar.component(.hour, from: entryDate) == 12 {
+        */
+        
+        
+        
+        let calendar = Calendar.current
+        let currentDate = Date()
+
+        // Extract the hour component from the current date
+        let hourOffset = calendar.component(.hour, from: currentDate)
+        print("Current hour offset: \(hourOffset)")
+
+        // Get the start of the current day
+        let startOfCurrentDay = calendar.startOfDay(for: currentDate)
+
+        // Define entryDate
+        let entryDate = calendar.date(byAdding: .day, value: 1, to: startOfCurrentDay) ?? currentDate
+
+        // Now entryDate is non-optional and can be used directly
+        // Check if the entryDate is midnight of the next day
+        if calendar.isDate(entryDate, equalTo: currentDate, toGranularity: .day) && calendar.component(.hour, from: entryDate) == 0 {
+            // This block will run if entryDate is midnight
+            print("It's midnight: \(entryDate)")
+            // Reset the last update date at midnight
+            let lastUpdateDate = defaults.object(forKey: lastUpdateKey) as? Date ?? Date.distantPast
+            print("Last update date: \(lastUpdateDate)")
+            
+            defaults.set(Date.distantPast, forKey: lastUpdateKey)
+            
+            let lastUpdateDate2 = defaults.object(forKey: lastUpdateKey) as? Date ?? Date.distantPast
+            print("Last update date2: \(lastUpdateDate2)")
+            print("---2.5")
+        } else {
+            // Handle the case for other times
+            print("Current time: \(currentDate), Entry time (next midnight): \(entryDate)")
         }
 
-        print(entryDate)
-        print(currentDate)
-        print("---2")
+
+        
+        
+        /*
+        let calendar = Calendar.current
+        let currentDate = Date()
+
+        // Get the start of the current day
+        let startOfCurrentDay = calendar.startOfDay(for: currentDate)
+
+        // Add one day to get the start of the next day (which is midnight)
+        let entryDate = calendar.date(byAdding: .day, value: 1, to: startOfCurrentDay)
+    
+        // Check if the entryDate is midnight of the next day
         if calendar.isDate(entryDate, equalTo: currentDate, toGranularity: .day) && calendar.component(.hour, from: entryDate) == 0 {
+            // This block will run if entryDate is midnight
+            
+            
             // Reset the last update date at midnight
             let lastUpdateDate = defaults.object(forKey: lastUpdateKey) as? Date ?? Date.distantPast
             print("Last update date: \(lastUpdateDate)")
@@ -142,7 +198,8 @@ struct RandomIconsProvider: TimelineProvider {
             print("Last update date2: \(lastUpdateDate2)")
             print("---2.5")
         }
-
+        */
+        
         // Fetch icons (this will fetch new ones if the date was reset)
         var icons = fetchRandomIconsIfNeeded(currentDate: entryDate)
 

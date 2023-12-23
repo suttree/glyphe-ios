@@ -24,8 +24,8 @@ struct GlypheWidget: Widget {
         StaticConfiguration(kind: kind, provider: RandomIconsProvider()) { entry in
             RandomIconsWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Glyphe")
-        .description("A thoughtful horoscope of interpretable hieroglyphes")
+        .configurationDisplayName("hieroscope")
+        .description("Thee horoscope of hieroglyphes")
     }
 }
 

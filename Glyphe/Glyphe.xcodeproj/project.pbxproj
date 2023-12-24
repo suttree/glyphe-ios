@@ -609,6 +609,8 @@
 		AEB3BE3F2B110DB30053776F /* 147.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB82B110DAF0053776F /* 147.png */; };
 		AEB3BE402B110DB30053776F /* 153.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB92B110DAF0053776F /* 153.png */; };
 		AEB3BE412B110DB30053776F /* 153.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB92B110DAF0053776F /* 153.png */; };
+		AEB7249B2B384B530007AA3D /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = AEB7249A2B384B530007AA3D /* content.json */; };
+		AEB7249C2B384B720007AA3D /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = AEB7249A2B384B530007AA3D /* content.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -945,6 +947,7 @@
 		AEB3BBB62B110DAF0053776F /* 85.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 85.png; sourceTree = "<group>"; };
 		AEB3BBB82B110DAF0053776F /* 147.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 147.png; sourceTree = "<group>"; };
 		AEB3BBB92B110DAF0053776F /* 153.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 153.png; sourceTree = "<group>"; };
+		AEB7249A2B384B530007AA3D /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = content.json; path = ../smallseasons/content.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -970,6 +973,7 @@
 		AEB3B4792B0F99B10053776F = {
 			isa = PBXGroup;
 			children = (
+				AEB7249A2B384B530007AA3D /* content.json */,
 				AEB3BA752B110DAE0053776F /* Icons */,
 				AEB3B4842B0F99B10053776F /* Glyphe */,
 				AEB3B49D2B0F99E50053776F /* GlypheWidget */,
@@ -1574,6 +1578,7 @@
 				AEB3BD122B110DB10053776F /* 282.png in Resources */,
 				AEB3BC202B110DB00053776F /* 167.png in Resources */,
 				AEB3BCCE2B110DB10053776F /* 105.png in Resources */,
+				AEB7249B2B384B530007AA3D /* content.json in Resources */,
 				AEB3BBD62B110DB00053776F /* 76.png in Resources */,
 				AEB3BBFE2B110DB00053776F /* 164.png in Resources */,
 				AEB3BE082B110DB30053776F /* 187.png in Resources */,
@@ -1759,6 +1764,7 @@
 				AEB3BCCD2B110DB10053776F /* 139.png in Resources */,
 				AEB3BD432B110DB20053776F /* 292.png in Resources */,
 				AEB3BC9B2B110DB10053776F /* 265.png in Resources */,
+				AEB7249C2B384B720007AA3D /* content.json in Resources */,
 				AEB3BCF32B110DB10053776F /* 20.png in Resources */,
 				AEB3BC812B110DB10053776F /* 275.png in Resources */,
 				AEB3BC712B110DB10053776F /* 314.png in Resources */,

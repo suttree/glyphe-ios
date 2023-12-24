@@ -10,6 +10,51 @@ struct RandomIconsEntry: TimelineEntry {
     let icon4: UIImage
 }
 
+import Foundation
+
+struct Sekki: Decodable {
+    let id: String
+    let kanji: String
+    let notes: String
+    let description: String
+    let startDate: String
+}
+
+struct SeasonsData: Decodable {
+    let sekki: [Sekki]
+}
+
+enum WidgetSize {
+    case small, medium, large
+}
+
+func loadSeasonData(for size: WidgetSize) -> (id: String, kanji: String, notes: String?, description: String?) {
+    guard let url = Bundle.main.url(forResource: "content", withExtension: "json"),
+          let data = try? Data(contentsOf: url),
+          let seasonsData = try? JSONDecoder().decode(SeasonsData.self, from: data) else {
+        return ("", "", nil, nil)
+    }
+
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MM-dd"
+    let today = formatter.string(from: Date())
+
+    for season in seasonsData.sekki {
+        if season.startDate <= today {
+            switch size {
+            case .small:
+                return (season.id, season.kanji, nil, nil)
+            case .medium:
+                return (season.id, season.kanji, season.notes, nil)
+            case .large:
+                return (season.id, season.kanji, season.notes, season.description)
+            }
+        }
+    }
+
+    return ("", "", nil, nil)
+}
+
 struct RandomIconsWidgetEntryView: View {
     var entry: RandomIconsEntry
 
@@ -19,6 +64,22 @@ struct RandomIconsWidgetEntryView: View {
     let dayString = Calendar.current.weekdaySymbols[Calendar.current.component(.weekday, from: Date()) - 1]
     
     var body: some View {
+        
+        let smallWidgetData = loadSeasonData(for: .small)
+        let mediumWidgetData = loadSeasonData(for: .medium)
+        let largeWidgetData = loadSeasonData(for: .large)
+        
+        let smallWidgetText = smallWidgetData.id
+        
+        let mediumWidgetText = """
+        \(mediumWidgetData.id) \n \
+        \(mediumWidgetData.notes ?? "")
+        """
+        let largeWidgetText = """
+        \(largeWidgetData.id) \n \
+        \(largeWidgetData.notes ?? "")
+        """
+        
         Group {
             switch widgetFamily {
             case .systemSmall:
@@ -26,7 +87,7 @@ struct RandomIconsWidgetEntryView: View {
                 Image(uiImage: entry.icon1)
                     .resizable()
                     .scaledToFit()
-                Text(dayString)
+                Text(smallWidgetText)
                     .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                     .foregroundColor(Color(white: 0.2)) // Off-black color
                     .multilineTextAlignment(.center) // Center align text
@@ -48,7 +109,7 @@ struct RandomIconsWidgetEntryView: View {
                         .resizable()
                         .scaledToFit()
                 }
-                Text(dayString)
+                Text(mediumWidgetText)
                     .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                     .foregroundColor(Color(white: 0.2)) // Off-black color
                     .multilineTextAlignment(.center) // Center align text
@@ -74,7 +135,7 @@ struct RandomIconsWidgetEntryView: View {
                             .scaledToFit()
                     }
                 }
-                Text(dayString)
+                Text(largeWidgetText)
                     .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                     .foregroundColor(Color(white: 0.2)) // Off-black color
                     .multilineTextAlignment(.center) // Center align text

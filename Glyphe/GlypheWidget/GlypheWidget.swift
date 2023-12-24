@@ -189,110 +189,30 @@ struct RandomIconsProvider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         print("getTimeline called")
         var entries: [RandomIconsEntry] = []
-        
-        /*
-        let currentDate = Date()
-        let calendar = Calendar.current
-
-        let hourOffset = calendar.component(.hour, from: currentDate)
-
-        print(hourOffset)
-        print("---0")
-        print(calendar.date(byAdding: .hour, value: hourOffset, to: currentDate))
-        print("---1")
-         
-         guard let entryDate = calendar.date(byAdding: .hour, value: hourOffset, to: currentDate) else {
-             print("Error: Failed to calculate the entry date")
-             // Handle the error, e.g., by logging or using a fallback date
-             // Return from the function if there's no meaningful way to proceed
-             return
-         }
-
-         print(entryDate)
-         print(currentDate)
-         print("---2")
-         if calendar.isDate(entryDate, equalTo: currentDate, toGranularity: .day) && calendar.component(.hour, from: entryDate) == 12 {
-        */
-        
-        
-        
         let calendar = Calendar.current
         let currentDate = Date()
-
-        // Extract the hour component from the current date
-        let hourOffset = calendar.component(.hour, from: currentDate)
-        print("Current hour offset: \(hourOffset)")
-
-        // Get the start of the current day
-        let startOfCurrentDay = calendar.startOfDay(for: currentDate)
-
-        // Define entryDate
-        let entryDate = calendar.date(byAdding: .day, value: 1, to: startOfCurrentDay) ?? currentDate
-
-        // Now entryDate is non-optional and can be used directly
-        // Check if the entryDate is midnight of the next day
-        if calendar.isDate(entryDate, equalTo: currentDate, toGranularity: .day) && calendar.component(.hour, from: entryDate) == 0 {
-            // This block will run if entryDate is midnight
-            print("It's midnight: \(entryDate)")
-            // Reset the last update date at midnight
-            let lastUpdateDate = defaults.object(forKey: lastUpdateKey) as? Date ?? Date.distantPast
-            print("Last update date: \(lastUpdateDate)")
-            
-            defaults.set(Date.distantPast, forKey: lastUpdateKey)
-            
-            let lastUpdateDate2 = defaults.object(forKey: lastUpdateKey) as? Date ?? Date.distantPast
-            print("Last update date2: \(lastUpdateDate2)")
-            print("---2.5")
-        } else {
-            // Handle the case for other times
-            print("Current time: \(currentDate), Entry time (next midnight): \(entryDate)")
-        }
-
-
         
-        
-        /*
-        let calendar = Calendar.current
-        let currentDate = Date()
+        // Fetch icons - this will fetch new ones if the date was reset or use existing ones
+        var icons = fetchRandomIconsIfNeeded(currentDate: currentDate)
 
-        // Get the start of the current day
-        let startOfCurrentDay = calendar.startOfDay(for: currentDate)
+        // Create an entry for each hour in the next 24 hours
+        for hourOffset in 0..<24 {
+            guard let entryDate = calendar.date(byAdding: .hour, value: hourOffset, to: currentDate) else { continue }
 
-        // Add one day to get the start of the next day (which is midnight)
-        let entryDate = calendar.date(byAdding: .day, value: 1, to: startOfCurrentDay)
-    
-        // Check if the entryDate is midnight of the next day
-        if calendar.isDate(entryDate, equalTo: currentDate, toGranularity: .day) && calendar.component(.hour, from: entryDate) == 0 {
-            // This block will run if entryDate is midnight
-            
-            
-            // Reset the last update date at midnight
-            let lastUpdateDate = defaults.object(forKey: lastUpdateKey) as? Date ?? Date.distantPast
-            print("Last update date: \(lastUpdateDate)")
-            
-            defaults.set(Date.distantPast, forKey: lastUpdateKey)
-            
-            let lastUpdateDate2 = defaults.object(forKey: lastUpdateKey) as? Date ?? Date.distantPast
-            print("Last update date2: \(lastUpdateDate2)")
-            print("---2.5")
+            // Rotate the icons every 6 hours
+            if hourOffset % 6 == 0 {
+                print("Rotating icons at hourOffset: \(hourOffset)")
+                icons.rotate()
+            }
+
+            let entry = RandomIconsEntry(date: entryDate, icon1: icons[0], icon2: icons[1], icon3: icons[2], icon4: icons[3])
+            entries.append(entry)
         }
-        */
-        
-        // Fetch icons (this will fetch new ones if the date was reset)
-        var icons = fetchRandomIconsIfNeeded(currentDate: entryDate)
-
-        // Rotate the icons every 6 hours
-        if hourOffset % 1 == 0 {
-            print("rotate")
-            icons.rotate()
-        }
-
-        let entry = RandomIconsEntry(date: entryDate, icon1: icons[0], icon2: icons[1], icon3: icons[2], icon4: icons[3])
-        entries.append(entry)
 
         let timeline = Timeline(entries: entries, policy: .after(entries.last?.date ?? currentDate))
         completion(timeline)
     }
+
 
     func fetchRandomIconsIfNeeded(currentDate: Date) -> [UIImage] {
         print("fetchRandomIconsIfNeeded called")

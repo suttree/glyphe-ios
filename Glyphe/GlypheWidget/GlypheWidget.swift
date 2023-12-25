@@ -67,15 +67,15 @@ func textForUserChoice(_ choice: String, widgetSize: WidgetSize) -> String {
         case .medium:
             let mediumWidgetData = loadSeasonData(for: .medium)
             let mediumWidgetText = """
-            \(mediumWidgetData.id) \n \
+            \(mediumWidgetData.id) \n\
             \(mediumWidgetData.notes ?? "")
             """
             return mediumWidgetText
         case .large:
             let largeWidgetData = loadSeasonData(for: .large)
             let largeWidgetText = """
-            \(largeWidgetData.kanji) \n \
-            \(largeWidgetData.id) \n \
+            \(largeWidgetData.kanji) \n\
+            \(largeWidgetData.id) \n\
             \(largeWidgetData.notes ?? "")
             """
             return largeWidgetText

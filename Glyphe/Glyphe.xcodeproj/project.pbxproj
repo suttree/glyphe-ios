@@ -15,7 +15,6 @@
 		AEB3B49C2B0F99E40053776F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB3B49B2B0F99E40053776F /* SwiftUI.framework */; };
 		AEB3B49F2B0F99E50053776F /* GlypheWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B49E2B0F99E50053776F /* GlypheWidgetBundle.swift */; };
 		AEB3B4A12B0F99E50053776F /* GlypheWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B4A02B0F99E50053776F /* GlypheWidgetLiveActivity.swift */; };
-		AEB3B4A32B0F99E50053776F /* GlypheWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B4A22B0F99E50053776F /* GlypheWidget.swift */; };
 		AEB3B4A52B0F99E50053776F /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B4A42B0F99E50053776F /* AppIntent.swift */; };
 		AEB3B4A72B0F99EB0053776F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB3B4A62B0F99EB0053776F /* Assets.xcassets */; };
 		AEB3B4AB2B0F99EB0053776F /* GlypheWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AEB3B4972B0F99E40053776F /* GlypheWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -611,6 +610,12 @@
 		AEB3BE412B110DB30053776F /* 153.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB92B110DAF0053776F /* 153.png */; };
 		AEB7249B2B384B530007AA3D /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = AEB7249A2B384B530007AA3D /* content.json */; };
 		AEB7249C2B384B720007AA3D /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = AEB7249A2B384B530007AA3D /* content.json */; };
+		AEB7249E2B38B8B20007AA3D /* DisplayOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7249D2B38B8B20007AA3D /* DisplayOption.swift */; };
+		AEB7249F2B38B8B20007AA3D /* DisplayOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7249D2B38B8B20007AA3D /* DisplayOption.swift */; };
+		AEB724A42B3988E10007AA3D /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB724A32B3988E10007AA3D /* 0.png */; };
+		AEB724A52B3988E10007AA3D /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB724A32B3988E10007AA3D /* 0.png */; };
+		AEB724A72B398CC90007AA3D /* GlypheWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B4A22B0F99E50053776F /* GlypheWidget.swift */; };
+		AEB724A82B398CCB0007AA3D /* GlypheWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B4A22B0F99E50053776F /* GlypheWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -948,6 +953,10 @@
 		AEB3BBB82B110DAF0053776F /* 147.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 147.png; sourceTree = "<group>"; };
 		AEB3BBB92B110DAF0053776F /* 153.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 153.png; sourceTree = "<group>"; };
 		AEB7249A2B384B530007AA3D /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = content.json; path = ../smallseasons/content.json; sourceTree = "<group>"; };
+		AEB7249D2B38B8B20007AA3D /* DisplayOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOption.swift; sourceTree = "<group>"; };
+		AEB724A02B3982960007AA3D /* Glyphe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Glyphe.entitlements; sourceTree = "<group>"; };
+		AEB724A12B3983220007AA3D /* GlypheWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GlypheWidgetExtension.entitlements; sourceTree = "<group>"; };
+		AEB724A32B3988E10007AA3D /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -973,6 +982,7 @@
 		AEB3B4792B0F99B10053776F = {
 			isa = PBXGroup;
 			children = (
+				AEB724A12B3983220007AA3D /* GlypheWidgetExtension.entitlements */,
 				AEB7249A2B384B530007AA3D /* content.json */,
 				AEB3BA752B110DAE0053776F /* Icons */,
 				AEB3B4842B0F99B10053776F /* Glyphe */,
@@ -994,10 +1004,12 @@
 		AEB3B4842B0F99B10053776F /* Glyphe */ = {
 			isa = PBXGroup;
 			children = (
+				AEB724A02B3982960007AA3D /* Glyphe.entitlements */,
 				AEB3B4852B0F99B10053776F /* GlypheApp.swift */,
 				AEB3B4872B0F99B10053776F /* ContentView.swift */,
 				AEB3B4892B0F99B30053776F /* Assets.xcassets */,
 				AEB3B48B2B0F99B30053776F /* Preview Content */,
+				AEB7249D2B38B8B20007AA3D /* DisplayOption.swift */,
 			);
 			path = Glyphe;
 			sourceTree = "<group>";
@@ -1035,6 +1047,7 @@
 		AEB3BA752B110DAE0053776F /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AEB724A32B3988E10007AA3D /* 0.png */,
 				AEB3BA762B110DAE0053776F /* 176.png */,
 				AEB3BA772B110DAE0053776F /* 88.png */,
 				AEB3BA782B110DAE0053776F /* 162.png */,
@@ -1451,6 +1464,7 @@
 				AEB3BBFC2B110DB00053776F /* 148.png in Resources */,
 				AEB3BC682B110DB00053776F /* 128.png in Resources */,
 				AEB3BC362B110DB00053776F /* 204.png in Resources */,
+				AEB724A42B3988E10007AA3D /* 0.png in Resources */,
 				AEB3BE042B110DB30053776F /* 193.png in Resources */,
 				AEB3BC382B110DB00053776F /* 199.png in Resources */,
 				AEB3BCB42B110DB10053776F /* 104.png in Resources */,
@@ -1966,6 +1980,7 @@
 				AEB3BD352B110DB10053776F /* 33.png in Resources */,
 				AEB3BD5D2B110DB20053776F /* 30.png in Resources */,
 				AEB3BDFD2B110DB30053776F /* 232.png in Resources */,
+				AEB724A52B3988E10007AA3D /* 0.png in Resources */,
 				AEB3BD492B110DB20053776F /* 251.png in Resources */,
 				AEB3BE3F2B110DB30053776F /* 147.png in Resources */,
 				AEB3BCDD2B110DB10053776F /* 120.png in Resources */,
@@ -2027,7 +2042,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB7249E2B38B8B20007AA3D /* DisplayOption.swift in Sources */,
 				AEB3B4882B0F99B10053776F /* ContentView.swift in Sources */,
+				AEB724A72B398CC90007AA3D /* GlypheWidget.swift in Sources */,
 				AEB3B4862B0F99B10053776F /* GlypheApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2036,10 +2053,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB3B4A32B0F99E50053776F /* GlypheWidget.swift in Sources */,
 				AEB3B4A52B0F99E50053776F /* AppIntent.swift in Sources */,
+				AEB7249F2B38B8B20007AA3D /* DisplayOption.swift in Sources */,
 				AEB3B49F2B0F99E50053776F /* GlypheWidgetBundle.swift in Sources */,
 				AEB3B4A12B0F99E50053776F /* GlypheWidgetLiveActivity.swift in Sources */,
+				AEB724A82B398CCB0007AA3D /* GlypheWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2179,6 +2197,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Glyphe/Glyphe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Glyphe/Preview Content\"";
@@ -2209,6 +2228,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Glyphe/Glyphe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Glyphe/Preview Content\"";
@@ -2238,6 +2258,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GlypheWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54PHU582RT;
@@ -2265,6 +2286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GlypheWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54PHU582RT;

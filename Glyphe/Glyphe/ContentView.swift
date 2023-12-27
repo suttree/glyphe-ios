@@ -37,35 +37,34 @@ struct ContentView: View {
                     .padding(.bottom, 20)
                     .padding(.horizontal)
 
-                List(options, id: \.self) { option in
-                    HStack {
-                        Text(option.rawValue)
-                            .font(.headline)
-                        Spacer()
-                        if selectedOption == option.rawValue {
-                            Image(systemName: "checkmark")
+                List {
+                    ForEach(options, id: \.self) { option in
+                        HStack {
+                            Text(option.rawValue)
+                                .font(.headline)
+                            Spacer()
+                            if selectedOption == option.rawValue {
+                                Image(systemName: "checkmark")
+                            }
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            selectedOption = option.rawValue
+                        }
+                        .padding(.vertical, 8) // Increase spacing
+                    }
+
+                    Button("Save Choice") {
+                        if let sharedDefaults = UserDefaults(suiteName: appGroupUserDefaultsID) {
+                            sharedDefaults.set(self.selectedOption, forKey: "displayOption")
+                            // Refresh the widget
+                            WidgetCenter.shared.reloadAllTimelines()
                         }
                     }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        selectedOption = option.rawValue
-                    }
-                    .padding(.vertical, 8) // Increase spacing
-                }
-                Button("Save Choice") {
-                    if let sharedDefaults = UserDefaults(suiteName: appGroupUserDefaultsID) {
-                        sharedDefaults.set(self.selectedOption, forKey: "displayOption")
-                        // Refresh the widget
-                        WidgetCenter.shared.reloadAllTimelines()
-                    }
+                    .frame(maxWidth: .infinity, alignment: .center) // Align the button in the center
                 }
             }
-            .navigationBarTitle("Hieroscope", displayMode: .inline)
-        }
-        .onDisappear {
-            if let sharedDefaults = UserDefaults(suiteName: appGroupUserDefaultsID) {
-                sharedDefaults.set(self.selectedOption, forKey: "displayOption")
-            }
+            .navigationBarTitle("hieroscope", displayMode: .inline)
         }
     }
 }

@@ -225,21 +225,23 @@ struct RandomIconsProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        //print("getTimeline called")
         var entries: [RandomIconsEntry] = []
+
         let calendar = Calendar.current
         let currentDate = Date()
-        
-        // Fetch icons - this will fetch new ones if the date was reset or use existing ones
+
+        // Get the start of the next day
+        guard let startOfNextDay = calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: currentDate)) else { return }
+
+        // Fetch initial icons
         var icons = fetchRandomIconsIfNeeded(currentDate: currentDate)
 
-        // Create an entry for each hour in the next 24 hours
-        for hourOffset in 0..<24 {
+        // Create an entry for each six-hour interval in the next 24 hours
+        for hourOffset in stride(from: 0, to: 24, by: 6) {
             guard let entryDate = calendar.date(byAdding: .hour, value: hourOffset, to: currentDate) else { continue }
 
             // Rotate the icons every 6 hours
-            if hourOffset % 6 == 0 {
-                print("Rotating icons at hourOffset: \(hourOffset)")
+            if hourOffset != 0 {
                 icons.rotate()
             }
 
@@ -247,9 +249,11 @@ struct RandomIconsProvider: TimelineProvider {
             entries.append(entry)
         }
 
-        let timeline = Timeline(entries: entries, policy: .after(entries.last?.date ?? currentDate))
+        // Set the timeline to refresh at the start of the next day
+        let timeline = Timeline(entries: entries, policy: .after(startOfNextDay))
         completion(timeline)
     }
+
 
     func fetchRandomIconsIfNeeded(currentDate: Date) -> [UIImage] {
         print("fetchRandomIconsIfNeeded called")

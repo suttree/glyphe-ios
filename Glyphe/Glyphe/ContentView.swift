@@ -14,6 +14,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedOption: String
+    @State private var isButtonPressed = false
     let options: [DisplayOption] = [.daysOfWeek, .mantras, .smallSeasons]
 
     // Initialize with shared UserDefaults
@@ -54,17 +55,27 @@ struct ContentView: View {
                         .padding(.vertical, 8) // Increase spacing
                     }
 
-                    Button("Save Choice") {
-                        if let sharedDefaults = UserDefaults(suiteName: appGroupUserDefaultsID) {
-                            sharedDefaults.set(self.selectedOption, forKey: "displayOption")
-                            // Refresh the widget
-                            WidgetCenter.shared.reloadAllTimelines()
+                Button(action: {
+                            if let sharedDefaults = UserDefaults(suiteName: appGroupUserDefaultsID) {
+                                sharedDefaults.set(self.selectedOption, forKey: "displayOption")
+                                WidgetCenter.shared.reloadAllTimelines()
+                            }
+                            isButtonPressed = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                isButtonPressed = false
+                            }
+                }) {
+                        if isButtonPressed {
+                            Label("Saved!", systemImage: "checkmark.circle.fill")
+                                .foregroundColor(.green)
+                        } else {
+                            Text("Save")
                         }
                     }
-                    .frame(maxWidth: .infinity, alignment: .center) // Align the button in the center
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .transition(.scale)
                 }
-            }
-            .navigationBarTitle("hieroscope", displayMode: .inline)
+            }.navigationBarTitle("hieroscope", displayMode: .inline)
         }
     }
 }

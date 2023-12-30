@@ -9,12 +9,10 @@
 import WidgetKit
 import SwiftUI
 
-// Define this constant at the top of your file or in a shared constants file
-//let appGroupUserDefaultsID = "group.com.yourcompany.yourapp"
-
 struct ContentView: View {
     @State private var selectedOption: String
     @State private var isButtonPressed = false
+
     let options: [DisplayOption] = [.daysOfWeek, .mantras, .smallSeasons]
 
     // Initialize with shared UserDefaults
@@ -26,15 +24,24 @@ struct ContentView: View {
         }
     }
 
+    // State to store the season data
+    @State private var seasonData: (id: String, kanji: String, notes: String?, description: String?) = ("", "", nil, nil)
+
+    // Load season data when the view appears
+    private func loadSeasonData() {
+        // Assuming loadSeasonData is a static function or can be accessed here
+        seasonData = hieroscope.loadSeasonData(for: .large)  // Choose the appropriate size
+    }
+
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                Text("Welcome to Hieroscope!")
+                Text("hieroscope!")
                     .font(.title)
                     .padding(.top)
                     .padding(.horizontal)
                 
-                Text("Choose your preferred display option for the widget:")
+                Text("Thee horoscope of hieroglyphes")
                     .padding(.bottom, 20)
                     .padding(.horizontal)
 
@@ -53,7 +60,7 @@ struct ContentView: View {
                             selectedOption = option.rawValue
                         }
                         .padding(.vertical, 8) // Increase spacing
-                    }
+                }
 
                 Button(action: {
                             if let sharedDefaults = UserDefaults(suiteName: appGroupUserDefaultsID) {
@@ -75,7 +82,43 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .transition(.scale)
                 }
-            }.navigationBarTitle("hieroscope", displayMode: .inline)
+                
+                // Display smallseason data
+                Spacer()
+                if !seasonData.kanji.isEmpty {
+                    VStack(alignment: .leading) {
+                        Text("This season")
+                            .font(.headline)
+                            .padding(.bottom, 5)
+
+                        Text("\(seasonData.id)")
+                            .padding(.bottom, 2)
+                        
+                        Text("\(seasonData.kanji)")
+                            .padding(.bottom, 2)
+                        
+                        if let notes = seasonData.notes {
+                            Text("\(notes)")
+                                .padding(.bottom, 2)
+                        }
+
+                        if let description = seasonData.description {
+                            Text("\(description)")
+                                .padding(.bottom, 2)
+                        }
+                        
+                        Link("https://smallseasons.guide", destination: URL(string: "https://smallseasons.guide")!)
+                            .padding(.top, 5)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading) // Align to leading edge
+                }
+                Spacer()
+            }
+            .navigationBarTitle("hieroscope", displayMode: .inline)
+            .onAppear {
+                loadSeasonData()
+            }
         }
     }
 }

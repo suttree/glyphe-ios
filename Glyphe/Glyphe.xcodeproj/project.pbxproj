@@ -2208,7 +2208,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.Glyphe;
 				PRODUCT_NAME = hieroscope;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2239,7 +2239,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.Glyphe;
 				PRODUCT_NAME = hieroscope;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2258,7 +2258,7 @@
 				DEVELOPMENT_TEAM = 54PHU582RT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GlypheWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = GlypheWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = hieroglyphe;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2266,7 +2266,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe.GlypheWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.Glyphe.GlypheWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2286,7 +2286,7 @@
 				DEVELOPMENT_TEAM = 54PHU582RT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GlypheWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = GlypheWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = hieroglyphe;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2294,7 +2294,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = suttree.Glyphe.GlypheWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.Glyphe.GlypheWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

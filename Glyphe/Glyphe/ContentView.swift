@@ -36,13 +36,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                Text("hieroscope!")
+                Text("Thee horoscope of hieroglyphes")
                     .font(.title)
                     .padding(.top)
-                    .padding(.horizontal)
-                
-                Text("Thee horoscope of hieroglyphes")
-                    .padding(.bottom, 20)
                     .padding(.horizontal)
 
                 List {
@@ -87,24 +83,16 @@ struct ContentView: View {
                 Spacer()
                 if !seasonData.kanji.isEmpty {
                     VStack(alignment: .leading) {
-                        Text("This season")
+                        Text("\(seasonData.id)")
                             .font(.headline)
                             .padding(.bottom, 5)
 
-                        Text("\(seasonData.id)")
-                            .padding(.bottom, 2)
-                        
                         Text("\(seasonData.kanji)")
-                            .padding(.bottom, 2)
-                        
-                        if let notes = seasonData.notes {
-                            Text("\(notes)")
-                                .padding(.bottom, 2)
-                        }
+                            .padding(.bottom, 3)
 
                         if let description = seasonData.description {
                             Text("\(description)")
-                                .padding(.bottom, 2)
+                                .padding(.bottom, 3)
                         }
                         
                         Link("https://smallseasons.guide", destination: URL(string: "https://smallseasons.guide")!)

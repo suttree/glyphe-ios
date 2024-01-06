@@ -40,20 +40,30 @@ func loadSeasonData(for size: WidgetSize) -> (id: String, kanji: String, notes: 
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd"
     let currentYear = Calendar.current.component(.year, from: Date())
-    guard let today = formatter.date(from: "\(currentYear)-01-01") else {
-        return ("", "", nil, nil)
-    }
+    let today = Date()  // Use current date
 
-    var mostRecentSeason: Sekki? = seasonsData.sekki.last  // Default to the last season of the previous year
+    var mostRecentSeason: Sekki? = nil
     for season in seasonsData.sekki {
         guard let seasonStartDateThisYear = formatter.date(from: "\(currentYear)-\(season.startDate)") else {
             continue
         }
         
+        // Debug print statements
+        //print("Season Start Date: \(seasonStartDateThisYear)")
+        //print("Today: \(today)")
+
         if seasonStartDateThisYear <= today {
             mostRecentSeason = season
-            break
+            // Additional break condition when today's date matches the start date of a season
+            if formatter.string(from: seasonStartDateThisYear) == formatter.string(from: today) {
+                break
+            }
         }
+    }
+
+    // If no season matches, default to the last season of the previous year
+    if mostRecentSeason == nil {
+        mostRecentSeason = seasonsData.sekki.last
     }
 
     guard let season = mostRecentSeason else {
@@ -69,6 +79,7 @@ func loadSeasonData(for size: WidgetSize) -> (id: String, kanji: String, notes: 
         return (season.id, season.kanji, season.notes, season.description)
     }
 }
+
 
 func textForUserChoice(_ choice: String, widgetSize: WidgetSize) -> String {
     switch choice {

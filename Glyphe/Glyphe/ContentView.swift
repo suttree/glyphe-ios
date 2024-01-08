@@ -1,11 +1,3 @@
-//
-//  ContentView.swift
-//  Glyphe
-//
-//  Created by Duncan Gough on 23/11/2023.
-//
-
-
 import WidgetKit
 import SwiftUI
 
@@ -13,7 +5,7 @@ struct ContentView: View {
     @State private var selectedOption: String
     @State private var isButtonPressed = false
 
-    let options: [DisplayOption] = [.daysOfWeek, .mantras, .smallSeasons]
+    let options: [DisplayOption] = [.daysOfWeek, .smallSeasons]
 
     // Initialize with shared UserDefaults
     init() {
@@ -29,19 +21,14 @@ struct ContentView: View {
 
     // Load season data when the view appears
     private func loadSeasonData() {
-        // Assuming loadSeasonData is a static function or can be accessed here
         seasonData = hieroscope.loadSeasonData(for: .large)  // Choose the appropriate size
     }
 
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                Text("Thee horoscope of hieroglyphes")
-                    .font(.title)
-                    .padding(.top)
-                    .padding(.horizontal)
-
-                List {
+            List {
+                // First section for the options
+                Section {
                     ForEach(options, id: \.self) { option in
                         HStack {
                             Text(option.rawValue)
@@ -55,19 +42,19 @@ struct ContentView: View {
                         .onTapGesture {
                             selectedOption = option.rawValue
                         }
-                        .padding(.vertical, 8) // Increase spacing
-                }
+                        .padding(.vertical, 8)
+                    }
 
-                Button(action: {
-                            if let sharedDefaults = UserDefaults(suiteName: appGroupUserDefaultsID) {
-                                sharedDefaults.set(self.selectedOption, forKey: "displayOption")
-                                WidgetCenter.shared.reloadAllTimelines()
-                            }
-                            isButtonPressed = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                isButtonPressed = false
-                            }
-                }) {
+                    Button(action: {
+                        if let sharedDefaults = UserDefaults(suiteName: appGroupUserDefaultsID) {
+                            sharedDefaults.set(self.selectedOption, forKey: "displayOption")
+                            WidgetCenter.shared.reloadAllTimelines()
+                        }
+                        isButtonPressed = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            isButtonPressed = false
+                        }
+                    }) {
                         if isButtonPressed {
                             Label("Saved!", systemImage: "checkmark.circle.fill")
                                 .foregroundColor(.green)
@@ -78,32 +65,15 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .transition(.scale)
                 }
-                
-                // Display smallseason data
-                Spacer()
-                if !seasonData.kanji.isEmpty {
-                    VStack(alignment: .leading) {
-                        Text("\(seasonData.id)")
-                            .font(.headline)
-                            .padding(.bottom, 5)
 
-                        Text("\(seasonData.kanji)")
-                            .padding(.bottom, 3)
-
-                        if let description = seasonData.description {
-                            Text("\(description)")
-                                .padding(.bottom, 3)
-                        }
-                        
-                        Link("https://smallseasons.guide", destination: URL(string: "https://smallseasons.guide")!)
-                            .padding(.top, 5)
+                // Separate section for the season card
+                Section {
+                    if !seasonData.kanji.isEmpty {
+                        SeasonCardView(seasonData: seasonData)
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading) // Align to leading edge
                 }
-                Spacer()
             }
-            .navigationBarTitle("hieroscope", displayMode: .inline)
+            .navigationBarTitle("Hieroglype", displayMode: .inline)
             .onAppear {
                 loadSeasonData()
             }
@@ -111,6 +81,32 @@ struct ContentView: View {
     }
 }
 
+// Custom card view for the season data
+struct SeasonCardView: View {
+    var seasonData: (id: String, kanji: String, notes: String?, description: String?)
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(seasonData.id)
+                .font(.headline)
+                .foregroundColor(.white)
+            Text(seasonData.kanji)
+                .foregroundColor(.white)
+            if let description = seasonData.description {
+                Text(description)
+                    .foregroundColor(.white)
+            }
+            Link(destination: URL(string: "https://smallseasons.guide")!) {
+                Text("smallseasons.guide")
+                    .foregroundColor(.white)
+                    .underline()
+            }
+        }
+    }
+}
+
+// Make sure to update DisplayOption enum to remove 'mantras' if it's there.
+// Also, update any other parts of the code that might depend on the 'mantras' option.
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

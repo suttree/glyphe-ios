@@ -224,27 +224,13 @@ struct RandomIconsProvider: TimelineProvider {
     let lastUpdateKey = "LastUpdateDate"
 
     func placeholder(in context: Context) -> RandomIconsEntry {
-        //print("placeholder called")
-        // Load real icons from your bundle
-        let icon1 = UIImage(named: "1.png") ?? UIImage()
-        let icon2 = UIImage(named: "2.png") ?? UIImage()
-        let icon3 = UIImage(named: "3.png") ?? UIImage()
-        let icon4 = UIImage(named: "4.png") ?? UIImage()
-
-        // Return an entry with these icons
-        return RandomIconsEntry(date: Date(), icon1: icon1, icon2: icon2, icon3: icon3, icon4: icon4)
+        let icons = fetchRandomIconsIfNeeded(currentDate: Date())
+        return RandomIconsEntry(date: Date(), icon1: icons[0], icon2: icons[1], icon3: icons[2], icon4: icons[3])
     }
 
     func getSnapshot(in context: Context, completion: @escaping (RandomIconsEntry) -> ()) {
-        // Provide a snapshot entry
-        //print("getSnapshot called")
-        //let snapshotIcon = UIImage() // Dummy icon for snapshot
-        let icon1 = UIImage(named: "1.png") ?? UIImage()
-        let icon2 = UIImage(named: "2.png") ?? UIImage()
-        let icon3 = UIImage(named: "3.png") ?? UIImage()
-        let icon4 = UIImage(named: "4.png") ?? UIImage()
-        
-        let entry = RandomIconsEntry(date: Date(), icon1: icon1, icon2: icon2, icon3: icon3, icon4: icon4)
+        let icons = fetchRandomIconsIfNeeded(currentDate: Date())
+        let entry = RandomIconsEntry(date: Date(), icon1: icons[0], icon2: icons[1], icon3: icons[2], icon4: icons[3])
         completion(entry)
     }
 

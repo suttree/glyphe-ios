@@ -89,19 +89,24 @@ struct SeasonCardView: View {
         VStack(alignment: .leading) {
             Text(seasonData.id)
                 .font(.headline)
-                .foregroundColor(.white)
+                .foregroundColor(.primary) // Adapts to light/dark mode
             Text(seasonData.kanji)
-                .foregroundColor(.white)
+                .foregroundColor(.primary) // Adapts to light/dark mode
             if let description = seasonData.description {
                 Text(description)
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary) // Adapts to light/dark mode
             }
             Link(destination: URL(string: "https://smallseasons.guide")!) {
                 Text("smallseasons.guide")
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary) // Adapts to light/dark mode
                     .underline()
             }
         }
+        .padding(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
+        .background(Color(UIColor.systemGroupedBackground)) // Match the system's grouped background color
+        .cornerRadius(10)
+        .shadow(radius: 5)
+        .listRowInsets(EdgeInsets()) // Remove default list row padding
     }
 }
 

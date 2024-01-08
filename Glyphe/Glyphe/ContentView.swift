@@ -103,9 +103,9 @@ struct SeasonCardView: View {
             }
         }
         .padding(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
-        .background(Color(UIColor.systemGroupedBackground)) // Match the system's grouped background color
+        //.background(Color(UIColor.systemGroupedBackground)) // Match the system's grouped background color
         .cornerRadius(10)
-        .shadow(radius: 5)
+        //.shadow(radius: 5)
         .listRowInsets(EdgeInsets()) // Remove default list row padding
     }
 }

@@ -6,6 +6,14 @@ import SwiftUI
 let appGroupUserDefaultsID = "group.com.suttree.smallseasons"
 
 // Core logic
+struct SmallSeasonsEntry: Decodable {
+    let id: String
+    let kanji: String
+    let notes: String
+    let description: String
+    let startDate: String
+}
+
 struct Sekki: Decodable {
     let id: String
     let kanji: String
@@ -68,7 +76,6 @@ func loadSeasonData(for size: WidgetSize) -> (id: String, kanji: String, notes: 
     }
 }
 
-
 func textForUserChoice(widgetSize: WidgetSize) -> String {
     switch widgetSize {
     case .small:
@@ -89,10 +96,6 @@ func textForUserChoice(widgetSize: WidgetSize) -> String {
         \(largeWidgetData.notes ?? "")
         """
         return largeWidgetText
-    }
-
-    default:
-        return "Invalid choice"
     }
 }
 
@@ -126,14 +129,17 @@ struct SmallSeasonsWidgetEntryView: View {
 
                 case .systemLarge:
                     // Large Widget - Show 4 icons in a 2x2 grid
-                    let largeWidgetText = textForUserChoice(userChoice, widgetSize: .large)
+                    let largeWidgetText = textForUserChoice(widgetSize: .large)
                     
                     Text(largeWidgetText)
                         .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                         .foregroundColor(Color(white: 0.2)) // Off-black color
                         .padding(.top, 5) // Optional padding from the image to the text
-
-                }
+                default:
+                    Text("Small seasons")
+                        .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
+                        .foregroundColor(Color(white: 0.2)) // Off-black color
+                        .padding(.top, 5) // Optional padding from the image to the text
             }
         .containerBackground(for: .widget) {
             Color(white: 0.95)
@@ -146,7 +152,9 @@ struct SmallSeasonsProvider: TimelineProvider {
     typealias Entry = SmallSeasonsEntry
 
     func placeholder(in context: Context) -> SmallSeasonsEntry {
-        return SmallSeasonsEntry(date: Date(), icon1: icons[0], icon2: icons[1], icon3: icons[2], icon4: icons[3])
+        let sekki = loadSeasonData(for: .large)
+        
+        return SmallSeasonsEntry(id:sekki.id, kanji: sekki.kanji, notes: sekki.notes, description: sekki.description, startDate:sekki.startDate)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SmallSeasonsEntry) -> ()) {

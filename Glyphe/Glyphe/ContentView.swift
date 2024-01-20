@@ -4,9 +4,21 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedOption: String
     @State private var isButtonPressed = false
+    @State private var seasonData: (id: String, kanji: String, notes: String?, description: String?) = ("", "", nil, nil)
+
+    // Public initializer
+    public init() {
+        // Initialize your state variables here if needed
+        _selectedOption = State(initialValue: "")
+        _isButtonPressed = State(initialValue: false)
+        _seasonData = State(initialValue: ("", "", nil, nil))
+    }
+    
+    //@State private var selectedOption: String
+    //@State private var isButtonPressed = false
 
     // State to store the season data
-    @State private var seasonData: (id: String, kanji: String, notes: String?, description: String?) = ("", "", nil, nil)
+    //@State private var seasonData: (id: String, kanji: String, notes: String?, description: String?) = ("", "", nil, nil)
 
     // Load season data when the view appears
     private func loadSeasonData() {

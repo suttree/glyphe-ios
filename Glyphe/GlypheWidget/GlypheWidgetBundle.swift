@@ -18,14 +18,14 @@ struct GlypheWidgetBundle: WidgetBundle {
 
 // Widget and Provider Registration
 struct GlypheWidget: Widget {
-    let kind: String = "GlypheWidget"
+    let kind: String = "SmallSeasonsWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: RandomIconsProvider()) { entry in
             RandomIconsWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("hieroscope")
-        .description("Thee horoscope of hieroglyphes")
+        .configurationDisplayName("Small Seasons")
+        .description("Small Seasons")
     }
 }
 

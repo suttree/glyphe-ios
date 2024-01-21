@@ -3,7 +3,7 @@ import WidgetKit
 import SwiftUI
 
 // Define the App Group UserDefaults ID
-let appGroupUserDefaultsID = "group.com.suttree.glyphe"
+let appGroupUserDefaultsID = "group.com.suttree.smallseasons"
 
 // Core logic
 struct RandomIconsEntry: TimelineEntry {

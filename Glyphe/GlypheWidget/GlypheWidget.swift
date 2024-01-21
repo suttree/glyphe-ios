@@ -81,40 +81,26 @@ func loadSeasonData(for size: WidgetSize) -> (id: String, kanji: String, notes: 
 }
 
 
-func textForUserChoice(_ choice: String, widgetSize: WidgetSize) -> String {
-    switch choice {
-    case DisplayOption.smallSeasons.rawValue:
-        switch widgetSize {
-        case .small:
-            let smallWidgetData = loadSeasonData(for: .small)
-            return smallWidgetData.id
-        case .medium:
-            let mediumWidgetData = loadSeasonData(for: .medium)
-            let mediumWidgetText = """
-            \(mediumWidgetData.id) \n\
-            \(mediumWidgetData.notes ?? "")
-            """
-            return mediumWidgetText
-        case .large:
-            let largeWidgetData = loadSeasonData(for: .large)
-            let largeWidgetText = """
-            \(largeWidgetData.kanji) \n\
-            \(largeWidgetData.id) \n\
-            \(largeWidgetData.notes ?? "")
-            """
-            return largeWidgetText
-        }
-
-    case DisplayOption.daysOfWeek.rawValue:
-        let dayString = Calendar.current.weekdaySymbols[Calendar.current.component(.weekday, from: Date()) - 1]
-        return "\(dayString)"
-
-    case DisplayOption.mantras.rawValue:
-        // Placeholder for mantras
-        return "Mantra of the day: (Your mantra here)"
-
-    default:
-        return "Invalid choice"
+func textForUserChoice(widgetSize: WidgetSize) -> String {
+    switch widgetSize {
+    case .small:
+        let smallWidgetData = loadSeasonData(for: .small)
+        return smallWidgetData.id
+    case .medium:
+        let mediumWidgetData = loadSeasonData(for: .medium)
+        let mediumWidgetText = """
+        \(mediumWidgetData.id) \n\
+        \(mediumWidgetData.notes ?? "")
+        """
+        return mediumWidgetText
+    case .large:
+        let largeWidgetData = loadSeasonData(for: .large)
+        let largeWidgetText = """
+        \(largeWidgetData.kanji) \n\
+        \(largeWidgetData.id) \n\
+        \(largeWidgetData.notes ?? "")
+        """
+        return largeWidgetText
     }
 }
 
@@ -124,26 +110,14 @@ struct RandomIconsWidgetEntryView: View {
     // This environment variable tells us what size the widget is
     @Environment(\.widgetFamily) var widgetFamily
 
-    // Retrieve user's choice from shared UserDefaults
-    var userChoice: String {
-        if let sharedDefaults = UserDefaults(suiteName: appGroupUserDefaultsID) {
-            return sharedDefaults.string(forKey: "displayOption") ?? DisplayOption.smallSeasons.rawValue
-        } else {
-            return DisplayOption.smallSeasons.rawValue
-        }
-    }
-
     var body: some View {
             Group {
                 switch widgetFamily {
                 case .systemSmall:
                     // Small Widget - Show single icon
-                    let smallWidgetText = textForUserChoice(userChoice, widgetSize: .small)
+                    let smallWidgetText = textForUserChoice(widgetSize: .small)
 
                     VStack {
-                        Image(uiImage: entry.icon1)
-                            .resizable()
-                            .scaledToFit()
                         Text(smallWidgetText)
                             .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                             .foregroundColor(Color(white: 0.2)) // Off-black color
@@ -154,22 +128,8 @@ struct RandomIconsWidgetEntryView: View {
                 // ... Handle other cases ...
                 case .systemMedium:
                     // Medium Widget - Show 4 icons in a line
-                    let mediumWidgetText = textForUserChoice(userChoice, widgetSize: .medium)
+                    let mediumWidgetText = textForUserChoice(widgetSize: .medium)
                     
-                    HStack {
-                        Image(uiImage: entry.icon1)
-                            .resizable()
-                            .scaledToFit()
-                        Image(uiImage: entry.icon2)
-                            .resizable()
-                            .scaledToFit()
-                        Image(uiImage: entry.icon3)
-                            .resizable()
-                            .scaledToFit()
-                        Image(uiImage: entry.icon4)
-                            .resizable()
-                            .scaledToFit()
-                    }
                     Text(mediumWidgetText)
                         .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                         .foregroundColor(Color(white: 0.2)) // Off-black color
@@ -177,26 +137,8 @@ struct RandomIconsWidgetEntryView: View {
 
                 case .systemLarge:
                     // Large Widget - Show 4 icons in a 2x2 grid
-                    let largeWidgetText = textForUserChoice(userChoice, widgetSize: .large)
+                    let largeWidgetText = textForUserChoice(widgetSize: .large)
                     
-                    VStack {
-                        HStack {
-                            Image(uiImage: entry.icon1)
-                                .resizable()
-                                .scaledToFit()
-                            Image(uiImage: entry.icon2)
-                                .resizable()
-                                .scaledToFit()
-                        }
-                        HStack {
-                            Image(uiImage: entry.icon3)
-                                .resizable()
-                                .scaledToFit()
-                            Image(uiImage: entry.icon4)
-                                .resizable()
-                                .scaledToFit()
-                        }
-                    }
                     Text(largeWidgetText)
                         .font(.system(.body, design: .serif).italic()) // Apply serif font in italic
                         .foregroundColor(Color(white: 0.2)) // Off-black color

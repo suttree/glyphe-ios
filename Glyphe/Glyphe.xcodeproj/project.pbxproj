@@ -2260,7 +2260,7 @@
 				DEVELOPMENT_TEAM = 54PHU582RT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GlypheWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = hieroglyphe;
+				INFOPLIST_KEY_CFBundleDisplayName = "Small Seasons";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2288,7 +2288,7 @@
 				DEVELOPMENT_TEAM = 54PHU582RT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GlypheWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = hieroglyphe;
+				INFOPLIST_KEY_CFBundleDisplayName = "Small Seasons";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

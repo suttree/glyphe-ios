@@ -14,10 +14,9 @@
 		AEB3B49A2B0F99E40053776F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB3B4992B0F99E40053776F /* WidgetKit.framework */; };
 		AEB3B49C2B0F99E40053776F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB3B49B2B0F99E40053776F /* SwiftUI.framework */; };
 		AEB3B49F2B0F99E50053776F /* GlypheWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B49E2B0F99E50053776F /* GlypheWidgetBundle.swift */; };
-		AEB3B4A12B0F99E50053776F /* GlypheWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B4A02B0F99E50053776F /* GlypheWidgetLiveActivity.swift */; };
 		AEB3B4A52B0F99E50053776F /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B4A42B0F99E50053776F /* AppIntent.swift */; };
 		AEB3B4A72B0F99EB0053776F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB3B4A62B0F99EB0053776F /* Assets.xcassets */; };
-		AEB3B4AB2B0F99EB0053776F /* GlypheWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AEB3B4972B0F99E40053776F /* GlypheWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AEB3B4AB2B0F99EB0053776F /* HieroscopeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AEB3B4972B0F99E40053776F /* HieroscopeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AEB3BBBA2B110DAF0053776F /* 176.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BA762B110DAE0053776F /* 176.png */; };
 		AEB3BBBB2B110DAF0053776F /* 176.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BA762B110DAE0053776F /* 176.png */; };
 		AEB3BBBC2B110DAF0053776F /* 88.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BA772B110DAE0053776F /* 88.png */; };
@@ -606,10 +605,6 @@
 		AEB3BE3F2B110DB30053776F /* 147.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB82B110DAF0053776F /* 147.png */; };
 		AEB3BE402B110DB30053776F /* 153.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB92B110DAF0053776F /* 153.png */; };
 		AEB3BE412B110DB30053776F /* 153.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB3BBB92B110DAF0053776F /* 153.png */; };
-		AEB7249B2B384B530007AA3D /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = AEB7249A2B384B530007AA3D /* content.json */; };
-		AEB7249C2B384B720007AA3D /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = AEB7249A2B384B530007AA3D /* content.json */; };
-		AEB7249E2B38B8B20007AA3D /* DisplayOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7249D2B38B8B20007AA3D /* DisplayOption.swift */; };
-		AEB7249F2B38B8B20007AA3D /* DisplayOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7249D2B38B8B20007AA3D /* DisplayOption.swift */; };
 		AEB724A42B3988E10007AA3D /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB724A32B3988E10007AA3D /* 0.png */; };
 		AEB724A52B3988E10007AA3D /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB724A32B3988E10007AA3D /* 0.png */; };
 		AEB724A72B398CC90007AA3D /* GlypheWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3B4A22B0F99E50053776F /* GlypheWidget.swift */; };
@@ -633,7 +628,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				AEB3B4AB2B0F99EB0053776F /* GlypheWidgetExtension.appex in Embed Foundation Extensions */,
+				AEB3B4AB2B0F99EB0053776F /* HieroscopeWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,11 +641,10 @@
 		AEB3B4872B0F99B10053776F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AEB3B4892B0F99B30053776F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB3B48C2B0F99B30053776F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AEB3B4972B0F99E40053776F /* GlypheWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GlypheWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB3B4972B0F99E40053776F /* HieroscopeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HieroscopeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB3B4992B0F99E40053776F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		AEB3B49B2B0F99E40053776F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		AEB3B49E2B0F99E50053776F /* GlypheWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlypheWidgetBundle.swift; sourceTree = "<group>"; };
-		AEB3B4A02B0F99E50053776F /* GlypheWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlypheWidgetLiveActivity.swift; sourceTree = "<group>"; };
 		AEB3B4A22B0F99E50053776F /* GlypheWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlypheWidget.swift; sourceTree = "<group>"; };
 		AEB3B4A42B0F99E50053776F /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		AEB3B4A62B0F99EB0053776F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -949,8 +943,6 @@
 		AEB3BBB62B110DAF0053776F /* 85.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 85.png; sourceTree = "<group>"; };
 		AEB3BBB82B110DAF0053776F /* 147.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 147.png; sourceTree = "<group>"; };
 		AEB3BBB92B110DAF0053776F /* 153.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 153.png; sourceTree = "<group>"; };
-		AEB7249A2B384B530007AA3D /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = content.json; path = ../smallseasons/content.json; sourceTree = "<group>"; };
-		AEB7249D2B38B8B20007AA3D /* DisplayOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOption.swift; sourceTree = "<group>"; };
 		AEB724A02B3982960007AA3D /* Glyphe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Glyphe.entitlements; sourceTree = "<group>"; };
 		AEB724A12B3983220007AA3D /* GlypheWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GlypheWidgetExtension.entitlements; sourceTree = "<group>"; };
 		AEB724A32B3988E10007AA3D /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
@@ -980,7 +972,6 @@
 			isa = PBXGroup;
 			children = (
 				AEB724A12B3983220007AA3D /* GlypheWidgetExtension.entitlements */,
-				AEB7249A2B384B530007AA3D /* content.json */,
 				AEB3BA752B110DAE0053776F /* Icons */,
 				AEB3B4842B0F99B10053776F /* Glyphe */,
 				AEB3B49D2B0F99E50053776F /* GlypheWidget */,
@@ -993,7 +984,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB3B4822B0F99B10053776F /* hieroscope.app */,
-				AEB3B4972B0F99E40053776F /* GlypheWidgetExtension.appex */,
+				AEB3B4972B0F99E40053776F /* HieroscopeWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1006,7 +997,6 @@
 				AEB3B4872B0F99B10053776F /* ContentView.swift */,
 				AEB3B4892B0F99B30053776F /* Assets.xcassets */,
 				AEB3B48B2B0F99B30053776F /* Preview Content */,
-				AEB7249D2B38B8B20007AA3D /* DisplayOption.swift */,
 			);
 			path = Glyphe;
 			sourceTree = "<group>";
@@ -1032,7 +1022,6 @@
 			isa = PBXGroup;
 			children = (
 				AEB3B49E2B0F99E50053776F /* GlypheWidgetBundle.swift */,
-				AEB3B4A02B0F99E50053776F /* GlypheWidgetLiveActivity.swift */,
 				AEB3B4A22B0F99E50053776F /* GlypheWidget.swift */,
 				AEB3B4A42B0F99E50053776F /* AppIntent.swift */,
 				AEB3B4A62B0F99EB0053776F /* Assets.xcassets */,
@@ -1346,9 +1335,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AEB3B4812B0F99B10053776F /* Glyphe */ = {
+		AEB3B4812B0F99B10053776F /* Hieroscope */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AEB3B4902B0F99B30053776F /* Build configuration list for PBXNativeTarget "Glyphe" */;
+			buildConfigurationList = AEB3B4902B0F99B30053776F /* Build configuration list for PBXNativeTarget "Hieroscope" */;
 			buildPhases = (
 				AEB3B47E2B0F99B10053776F /* Sources */,
 				AEB3B47F2B0F99B10053776F /* Frameworks */,
@@ -1360,14 +1349,14 @@
 			dependencies = (
 				AEB3B4AA2B0F99EB0053776F /* PBXTargetDependency */,
 			);
-			name = Glyphe;
+			name = Hieroscope;
 			productName = Glyphe;
 			productReference = AEB3B4822B0F99B10053776F /* hieroscope.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AEB3B4962B0F99E40053776F /* GlypheWidgetExtension */ = {
+		AEB3B4962B0F99E40053776F /* HieroscopeWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AEB3B4AC2B0F99EB0053776F /* Build configuration list for PBXNativeTarget "GlypheWidgetExtension" */;
+			buildConfigurationList = AEB3B4AC2B0F99EB0053776F /* Build configuration list for PBXNativeTarget "HieroscopeWidgetExtension" */;
 			buildPhases = (
 				AEB3B4932B0F99E40053776F /* Sources */,
 				AEB3B4942B0F99E40053776F /* Frameworks */,
@@ -1377,9 +1366,9 @@
 			);
 			dependencies = (
 			);
-			name = GlypheWidgetExtension;
+			name = HieroscopeWidgetExtension;
 			productName = GlypheWidgetExtension;
-			productReference = AEB3B4972B0F99E40053776F /* GlypheWidgetExtension.appex */;
+			productReference = AEB3B4972B0F99E40053776F /* HieroscopeWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -1400,7 +1389,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AEB3B47D2B0F99B10053776F /* Build configuration list for PBXProject "Glyphe" */;
+			buildConfigurationList = AEB3B47D2B0F99B10053776F /* Build configuration list for PBXProject "Hieroscope" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1413,8 +1402,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AEB3B4812B0F99B10053776F /* Glyphe */,
-				AEB3B4962B0F99E40053776F /* GlypheWidgetExtension */,
+				AEB3B4812B0F99B10053776F /* Hieroscope */,
+				AEB3B4962B0F99E40053776F /* HieroscopeWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1588,7 +1577,6 @@
 				AEB3BD122B110DB10053776F /* 282.png in Resources */,
 				AEB3BC202B110DB00053776F /* 167.png in Resources */,
 				AEB3BCCE2B110DB10053776F /* 105.png in Resources */,
-				AEB7249B2B384B530007AA3D /* content.json in Resources */,
 				AEB3BBD62B110DB00053776F /* 76.png in Resources */,
 				AEB3BBFE2B110DB00053776F /* 164.png in Resources */,
 				AEB3BE082B110DB30053776F /* 187.png in Resources */,
@@ -1773,7 +1761,6 @@
 				AEB3BCCD2B110DB10053776F /* 139.png in Resources */,
 				AEB3BD432B110DB20053776F /* 292.png in Resources */,
 				AEB3BC9B2B110DB10053776F /* 265.png in Resources */,
-				AEB7249C2B384B720007AA3D /* content.json in Resources */,
 				AEB3BCF32B110DB10053776F /* 20.png in Resources */,
 				AEB3BC812B110DB10053776F /* 275.png in Resources */,
 				AEB3BC712B110DB10053776F /* 314.png in Resources */,
@@ -2036,7 +2023,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB7249E2B38B8B20007AA3D /* DisplayOption.swift in Sources */,
 				AEB3B4882B0F99B10053776F /* ContentView.swift in Sources */,
 				AEB724A72B398CC90007AA3D /* GlypheWidget.swift in Sources */,
 				AEB3B4862B0F99B10053776F /* GlypheApp.swift in Sources */,
@@ -2048,9 +2034,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB3B4A52B0F99E50053776F /* AppIntent.swift in Sources */,
-				AEB7249F2B38B8B20007AA3D /* DisplayOption.swift in Sources */,
 				AEB3B49F2B0F99E50053776F /* GlypheWidgetBundle.swift in Sources */,
-				AEB3B4A12B0F99E50053776F /* GlypheWidgetLiveActivity.swift in Sources */,
 				AEB724A82B398CCB0007AA3D /* GlypheWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2060,7 +2044,7 @@
 /* Begin PBXTargetDependency section */
 		AEB3B4AA2B0F99EB0053776F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AEB3B4962B0F99E40053776F /* GlypheWidgetExtension */;
+			target = AEB3B4962B0F99E40053776F /* HieroscopeWidgetExtension */;
 			targetProxy = AEB3B4A92B0F99EB0053776F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2198,7 +2182,7 @@
 				DEVELOPMENT_TEAM = 54PHU582RT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Small Seasons";
+				INFOPLIST_KEY_CFBundleDisplayName = Hieroscope;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2209,7 +2193,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.smallseasons;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.hieroscope;
 				PRODUCT_NAME = hieroscope;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2230,7 +2214,7 @@
 				DEVELOPMENT_TEAM = 54PHU582RT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Small Seasons";
+				INFOPLIST_KEY_CFBundleDisplayName = Hieroscope;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2241,7 +2225,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.smallseasons;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.hieroscope;
 				PRODUCT_NAME = hieroscope;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2268,7 +2252,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.smallseasons.smallseasonswidget;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.hieroscope.hieroscopewidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2296,7 +2280,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.smallseasons.smallseasonswidget;
+				PRODUCT_BUNDLE_IDENTIFIER = suttree.com.hieroscope.hieroscopewidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2308,7 +2292,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AEB3B47D2B0F99B10053776F /* Build configuration list for PBXProject "Glyphe" */ = {
+		AEB3B47D2B0F99B10053776F /* Build configuration list for PBXProject "Hieroscope" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AEB3B48E2B0F99B30053776F /* Debug */,
@@ -2317,7 +2301,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AEB3B4902B0F99B30053776F /* Build configuration list for PBXNativeTarget "Glyphe" */ = {
+		AEB3B4902B0F99B30053776F /* Build configuration list for PBXNativeTarget "Hieroscope" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AEB3B4912B0F99B30053776F /* Debug */,
@@ -2326,7 +2310,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AEB3B4AC2B0F99EB0053776F /* Build configuration list for PBXNativeTarget "GlypheWidgetExtension" */ = {
+		AEB3B4AC2B0F99EB0053776F /* Build configuration list for PBXNativeTarget "HieroscopeWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AEB3B4AD2B0F99EB0053776F /* Debug */,
